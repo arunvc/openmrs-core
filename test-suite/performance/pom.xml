@@ -48,8 +48,13 @@
       <artifactId>maven-jar-plugin</artifactId>
       <executions>
         <execution>
-          <id>default-test-jar</id>
-          <phase>none</phase>
+          <goals>
+                <goal>test-jar</goal>
+            </goals>
+          <configuration>
+                <!-- Add this line to distinguish the artifact -->
+                <classifier>performance-tests</classifier>
+            </configuration>
         </execution>
       </executions>
     </plugin>

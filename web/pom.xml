@@ -101,7 +101,17 @@
 		 		<groupId>dom4j</groupId>
 		 		<artifactId>dom4j</artifactId>
 		 	</exclusion>
-		 </exclusions>
+		 </exclusions><plugin>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-maven-plugin</artifactId>
+      <version>11.0.18</version>
+      <configuration>
+        <scanIntervalSeconds>5</scanIntervalSeconds>
+        <webApp>
+          <contextPath>/openmrs</contextPath>
+        </webApp>
+      </configuration>
+    </plugin>
       </dependency>
       <dependency>
          <groupId>org.owasp.encoder</groupId>
@@ -125,17 +135,6 @@
 
    <build>
       <plugins>
-      <plugin>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-maven-plugin</artifactId>
-      <version>11.0.18</version>
-      <configuration>
-        <scanIntervalSeconds>5</scanIntervalSeconds>
-        <webApp>
-          <contextPath>/openmrs</contextPath>
-        </webApp>
-      </configuration>
-    </plugin>
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>

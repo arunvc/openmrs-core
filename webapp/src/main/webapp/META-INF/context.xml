@@ -10,7 +10,19 @@
     graphic logo is a trademark of OpenMRS Inc.
 
 -->
-<Context antiJARLocking="true" reloadable="false" useHttpOnly="false">
+
+
+<Context path="/" sessionCookiePath="/" >
+
+ 
+  <!-- Disable session persistence on restart -->
+ 
+  <!-- Prevent memory leaks -->
+  <Loader delegate="true"/>
+  <!-- Prevent Tomcat from exposing app name -->
+  <Resources cacheMaxSize="100000" cachingAllowed="true"/>
+  <!-- Set session timeout -->
+  <SessionCookie httpOnly="true" sameSite="Strict" secure="true"/>
   <!-- <loader loaderClass="org.openmrs.web.OpenmrsWebClassLoader" useSystemClassLoaderAsParent="false"></loader> -->
   <!--<Resource name="jdbc/openmrs"
 			auth="Container"

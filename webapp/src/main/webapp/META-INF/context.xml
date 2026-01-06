@@ -12,17 +12,8 @@
 -->
 
 
-<Context path="/" sessionCookiePath="/" >
+<Context antiJARLocking="true" reloadable="false" useHttpOnly="false">
 
- 
-  <!-- Disable session persistence on restart -->
- 
-  <!-- Prevent memory leaks -->
-  <Loader delegate="true"/>
-  <!-- Prevent Tomcat from exposing app name -->
-  <Resources cacheMaxSize="100000" cachingAllowed="true"/>
-  <!-- Set session timeout -->
-  <SessionCookie httpOnly="true" sameSite="Strict" secure="true"/>
   <!-- <loader loaderClass="org.openmrs.web.OpenmrsWebClassLoader" useSystemClassLoaderAsParent="false"></loader> -->
   <!--<Resource name="jdbc/openmrs"
 			auth="Container"

@@ -22,7 +22,16 @@
   <!-- Prevent Tomcat from exposing app name -->
   <Resources cacheMaxSize="100000" cachingAllowed="true"/>
   <!-- Set session timeout -->
-  <SessionCookie httpOnly="true" sameSite="Strict" secure="true"/>
+
+  
+    <SessionCookie
+      httpOnly="true"
+      secure="true"
+      sameSite="None"
+      domain=".cookiedomain.com"
+      path="/"
+  />
+  
   <!-- <loader loaderClass="org.openmrs.web.OpenmrsWebClassLoader" useSystemClassLoaderAsParent="false"></loader> -->
   <!--<Resource name="jdbc/openmrs"
 			auth="Container"

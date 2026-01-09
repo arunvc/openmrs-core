@@ -12,8 +12,17 @@
 -->
 
 
-<Context antiJARLocking="true" reloadable="false" useHttpOnly="false">
+<Context path="/lm-lyra-med" sessionCookiePath="/" privileged="true">
 
+ 
+  <!-- Disable session persistence on restart -->
+ 
+  <!-- Prevent memory leaks -->
+  <Loader delegate="true"/>
+  <!-- Prevent Tomcat from exposing app name -->
+  <Resources cacheMaxSize="100000" cachingAllowed="true"/>
+  <!-- Set session timeout -->
+  <SessionCookie httpOnly="true" sameSite="Strict" secure="true"/>
   <!-- <loader loaderClass="org.openmrs.web.OpenmrsWebClassLoader" useSystemClassLoaderAsParent="false"></loader> -->
   <!--<Resource name="jdbc/openmrs"
 			auth="Container"
@@ -66,3 +75,4 @@
         physicalName="FOO.BAR"/>
 -->
 </Context>
+

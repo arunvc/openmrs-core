@@ -12,7 +12,8 @@
 -->
 
 
-<Context path="/" sessionCookiePath="/" privileged="true">
+<Context path="/"  privileged="true"  >
+
 
  
   <!-- Disable session persistence on restart -->
@@ -21,10 +22,12 @@
   <Loader delegate="true"/>
   <!-- Prevent Tomcat from exposing app name -->
   <Resources cacheMaxSize="100000" cachingAllowed="true"/>
-  <!-- Set session timeout -->
+  <!-- Set session timeout
 
+    <CookieProcessor sameSiteCookies="none" /> -->
   
     <SessionCookie
+        name="JSESSIONID"
       httpOnly="true"
       secure="true"
       sameSite="None"

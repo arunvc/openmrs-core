@@ -12,7 +12,7 @@
 -->
 
 
-<Context path="/"  privileged="true"  >
+<Context path="/"  privileged="true"  sessionCookiePath="/" >
 
 
  
@@ -27,7 +27,7 @@
     <CookieProcessor sameSiteCookies="none" /> -->
   
     <SessionCookie
-        name="JSESSIONID"
+      name="JSESSIONID"
       httpOnly="true"
       secure="true"
       sameSite="None"
